@@ -10,6 +10,7 @@ public class Trainer : MonoBehaviour
     public List<SpriteRenderer> uncaughtCreatures;
     public List<SpriteRenderer> iscaughtCreatures;
 
+    public Hider creatureHider; // Reference to the Hider script
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -59,6 +60,7 @@ public class Trainer : MonoBehaviour
            
             if (!iscaughtCreatures.Contains(creatureRenderer)) 
             {
+                creatureHider.Hide(); // Call the Hide method from the Hider script to hide the creature
                 iscaughtCreatures.Add(creatureRenderer); // this will add the caught creature to the list of (caughtCreatures)
                
             }
