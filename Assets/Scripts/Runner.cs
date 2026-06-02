@@ -1,17 +1,41 @@
+using UnityEditor.XR;
 using UnityEngine;
 
 public class Runner : MonoBehaviour
 {
     public float speed = 5f;
+    bool isMoving = false;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        transform.position += Vector3.right * speed * Time.deltaTime;
+        if (isMoving == true)
+        {
+            transform.position += Vector3.right * speed * Time.deltaTime;
+        }
+
+
+
+    }
+
+
+    public void OnMoveClick()
+    {
+        isMoving = true;
+    }
+
+    public void OnStopClick()
+    {
+        isMoving = false;
+    }
+    public void OnFlipClick() 
+    {
+        speed = -speed;
     }
 }
